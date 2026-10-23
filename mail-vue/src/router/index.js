@@ -3,18 +3,26 @@ import NProgress from 'nprogress';
 import {useUiStore} from "@/store/ui.js";
 import {useSettingStore} from "@/store/setting.js";
 import {cvtR2Url} from "@/utils/convert.js";
+import LayoutView from '@/layout/index.vue';
+import EmailView from '@/views/email/index.vue';
+import ContentView from '@/views/content/index.vue';
+import SettingView from '@/views/setting/index.vue';
+import StarView from '@/views/star/index.vue';
+import LoginView from '@/views/login/index.vue';
+import TestView from '@/views/test/index.vue';
+import NotFoundView from '@/views/404/index.vue';
 
 const routes = [
     {
         path: '/',
         name: 'layout',
         redirect: '/inbox',
-        component: () => import('@/layout/index.vue'),
+        component: LayoutView,
         children: [
             {
                 path: '/inbox',
                 name: 'email',
-                component: () => import('@/views/email/index.vue'),
+                component: EmailView,
                 meta: {
                     title: 'inbox',
                     name: 'email',
@@ -24,7 +32,7 @@ const routes = [
             {
                 path: '/message',
                 name: 'content',
-                component: () => import('@/views/content/index.vue'),
+                component: ContentView,
                 meta: {
                     title: 'message',
                     name: 'content',
@@ -34,7 +42,7 @@ const routes = [
             {
                 path: '/settings',
                 name: 'setting',
-                component: () => import('@/views/setting/index.vue'),
+                component: SettingView,
                 meta: {
                     title: 'settings',
                     name: 'setting',
@@ -44,7 +52,7 @@ const routes = [
             {
                 path: '/starred',
                 name: 'star',
-                component: () => import('@/views/star/index.vue'),
+                component: StarView,
                 meta: {
                     title: 'starred',
                     name: 'star',
@@ -57,17 +65,17 @@ const routes = [
     {
         path: '/login',
         name: 'login',
-        component: () => import('@/views/login/index.vue')
+        component: LoginView
     },
     {
         path: '/test',
         name: 'test',
-        component: () => import('@/views/test/index.vue')
+        component: TestView
     },
     {
         path: '/:pathMatch(.*)*',
         name: '404',
-        component: () => import('@/views/404/index.vue')
+        component: NotFoundView
     }
 ]
 

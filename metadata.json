@@ -1,0 +1,8 @@
+{
+  "name": "Cloud Mail",
+  "description": "A serverless responsive multi-domain webmail service with RBAC, rich HTML email composition, and analytics.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

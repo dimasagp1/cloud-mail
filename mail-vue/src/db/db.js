@@ -1,4 +1,5 @@
 import Dexie from "dexie";
+import '@/store/pinia.js';
 import {useUserStore} from "@/store/user.js"
 import { watch, shallowRef } from "vue";
 

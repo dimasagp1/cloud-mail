@@ -182,8 +182,8 @@ const bindForm = reactive({
 })
 
 const form = reactive({
-  email: '',
-  password: '',
+  email: 'admin',
+  password: 'admin123',
 
 });
 const mySelect = ref()

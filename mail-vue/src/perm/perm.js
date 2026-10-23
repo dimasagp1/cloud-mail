@@ -1,4 +1,12 @@
 import {useUserStore} from "@/store/user.js";
+import SendView from '@/views/send/index.vue';
+import DraftView from '@/views/draft/index.vue';
+import UserView from '@/views/user/index.vue';
+import RoleView from '@/views/role/index.vue';
+import SysSettingView from '@/views/sys-setting/index.vue';
+import RegKeyView from '@/views/reg-key/index.vue';
+import AllEmailView from '@/views/all-email/index.vue';
+import AnalysisView from '@/views/analysis/index.vue';
 
 export default {
     mounted(el, binding) {
@@ -41,7 +49,7 @@ const routers = {
         {
             path: '/sent',
             name: 'send',
-            component: () => import('@/views/send/index.vue'),
+            component: SendView,
             meta: {
                 title: 'sent',
                 name: 'send',
@@ -51,7 +59,7 @@ const routers = {
         {
             path: '/drafts',
             name: 'draft',
-            component: () => import('@/views/draft/index.vue'),
+            component: DraftView,
             meta: {
                 title: 'drafts',
                 name: 'draft',
@@ -62,7 +70,7 @@ const routers = {
     'user:query': [{
         path: '/all-users',
         name: 'user',
-        component: () => import('@/views/user/index.vue'),
+        component: UserView,
         meta: {
             title: 'allUsers',
             name: 'user',
@@ -72,7 +80,7 @@ const routers = {
     'role:query': [{
         path: '/role',
         name: 'role',
-        component: () => import('@/views/role/index.vue'),
+        component: RoleView,
         meta: {
             title: 'permissions',
             name: 'role',
@@ -82,7 +90,7 @@ const routers = {
     'setting:query': [{
         path: '/system-setting',
         name: 'sys-setting',
-        component: () => import('@/views/sys-setting/index.vue'),
+        component: SysSettingView,
         meta: {
             title: 'SystemSettings',
             name: 'sys-setting',
@@ -92,7 +100,7 @@ const routers = {
     'reg-key:query': [{
         path: '/invite-code',
         name: 'reg-key',
-        component: () => import('@/views/reg-key/index.vue'),
+        component: RegKeyView,
         meta: {
             title: 'inviteCode',
             name: 'reg-key',
@@ -102,7 +110,7 @@ const routers = {
     'all-email:query': [{
         path: '/all-mail',
         name: 'all-email',
-        component: () => import('@/views/all-email/index.vue'),
+        component: AllEmailView,
         meta: {
             title: 'allMail',
             name: 'all-email',
@@ -112,7 +120,7 @@ const routers = {
     'analysis:query': [{
         path: '/analysis',
         name: 'analysis',
-        component: () => import('@/views/analysis/index.vue'),
+        component: AnalysisView,
         meta: {
             title: 'analytics',
             name: 'analysis',

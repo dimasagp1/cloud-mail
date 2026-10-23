@@ -3,8 +3,14 @@ import router from "@/router";
 import i18n from "@/i18n/index.js";
 import {useSettingStore} from "@/store/setting.js";
 
+const rawBaseUrl = import.meta.env.VITE_BASE_URL;
+const resolvedBaseUrl =
+    typeof rawBaseUrl === 'string' && (rawBaseUrl.startsWith('/') || rawBaseUrl.startsWith('http'))
+        ? rawBaseUrl
+        : '/api';
+
 let http = axios.create({
-    baseURL: import.meta.env.VITE_BASE_URL
+    baseURL: resolvedBaseUrl
 });
 
 http.interceptors.request.use(config => {
